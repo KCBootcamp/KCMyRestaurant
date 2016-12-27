@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
 
 public class Dish implements Serializable {
     private String name;
@@ -13,6 +14,19 @@ public class Dish implements Serializable {
     private BigDecimal price;
     private Currency currency;
     private String description;
+
+    public Dish(String name, String fotoUrl, List<String> allergens, BigDecimal price, Currency currency, String description) {
+        this.name = name;
+        this.fotoUrl = fotoUrl;
+        this.allergens = allergens;
+        this.price = price;
+        this.currency = currency;
+        this.description = description;
+    }
+
+    public Dish(String name, List<String> allergens, BigDecimal price) {
+        this(name, null, allergens, price, Currency.getInstance(Locale.FRANCE), "");
+    }
 
     public String getName() {
         return name;
