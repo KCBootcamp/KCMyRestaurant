@@ -1,11 +1,12 @@
 package model;
 
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.List;
 
-public class Dish {
+public class Dish implements Serializable {
     private String name;
     private String fotoUrl;
     private List<String> allergens;
