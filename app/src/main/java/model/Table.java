@@ -46,19 +46,8 @@ public class Table implements Serializable{
         return String.format(Resources.getSystem().getString(R.string.table_name_format), id);
     }
 
-    public String getIcon() {
-        String icon;
-        switch (state){
-            case ORDERTAKEN:
-                icon = Resources.getSystem().getString(R.string.icon_order_taken);
-            case ORDERSERVED:
-                icon = Resources.getSystem().getString(R.string.icon_order_served);
-            case ORDERPAID:
-                icon = Resources.getSystem().getString(R.string.icon_order_paid);
-            default:
-                icon = Resources.getSystem().getString(R.string.icon_order_pending);
-        }
-        return icon;
+    public int getIcon() {
+        return getState().getIconId();
     }
 
 }
