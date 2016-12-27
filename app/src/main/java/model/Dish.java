@@ -9,15 +9,15 @@ import java.util.Locale;
 
 public class Dish implements Serializable {
     private String name;
-    private String fotoUrl;
+    private String photoUrl;
     private List<String> allergens;
     private BigDecimal price;
     private Currency currency;
     private String description;
 
-    public Dish(String name, String fotoUrl, List<String> allergens, BigDecimal price, Currency currency, String description) {
+    public Dish(String name, String photoUrl, List<String> allergens, BigDecimal price, Currency currency, String description) {
         this.name = name;
-        this.fotoUrl = fotoUrl;
+        this.photoUrl = photoUrl;
         this.allergens = allergens;
         this.price = price;
         this.currency = currency;
@@ -36,12 +36,12 @@ public class Dish implements Serializable {
         this.name = name;
     }
 
-    public String getFotoUrl() {
-        return fotoUrl;
+    public String getPhotoUrl() {
+        return photoUrl;
     }
 
-    public void setFotoUrl(String fotoUrl) {
-        this.fotoUrl = fotoUrl;
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 
     public List<String> getAllergens() {
