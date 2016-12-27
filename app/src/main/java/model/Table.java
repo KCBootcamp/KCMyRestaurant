@@ -46,7 +46,7 @@ public class Table implements Serializable{
         return String.format(Resources.getSystem().getString(R.string.table_name_format), id);
     }
 
-    public int getIcon() {
+    public int getIconId() {
         return getState().getIconId();
     }
 
