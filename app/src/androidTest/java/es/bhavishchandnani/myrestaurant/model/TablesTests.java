@@ -1,14 +1,10 @@
-package es.bhavishchandnani.myrestaurant;
+package es.bhavishchandnani.myrestaurant.model;
 
 
 import android.test.AndroidTestCase;
 
 import java.util.LinkedList;
 import java.util.List;
-
-import model.Table;
-import model.TableState;
-import model.Tables;
 
 public class TablesTests extends AndroidTestCase {
     public void testCreateDishesNoReturnsNull(){

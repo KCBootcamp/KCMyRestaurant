@@ -1,4 +1,4 @@
-package model;
+package es.bhavishchandnani.myrestaurant.model;
 
 
 public enum DishType {

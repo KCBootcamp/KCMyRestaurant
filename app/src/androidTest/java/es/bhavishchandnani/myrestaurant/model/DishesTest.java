@@ -1,4 +1,4 @@
-package es.bhavishchandnani.myrestaurant;
+package es.bhavishchandnani.myrestaurant.model;
 
 
 import android.test.AndroidTestCase;
@@ -8,12 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
-import model.Allergens;
-import model.Dish;
-import model.DishType;
-import model.Dishes;
-
-import static es.bhavishchandnani.myrestaurant.DishTests.getAllergensList;
+import static es.bhavishchandnani.myrestaurant.model.DishTests.getAllergensList;
 
 public class DishesTest extends AndroidTestCase {
     public static final String DISH = "Dish";

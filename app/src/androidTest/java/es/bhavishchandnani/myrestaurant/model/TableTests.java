@@ -1,10 +1,11 @@
-package es.bhavishchandnani.myrestaurant;
+package es.bhavishchandnani.myrestaurant.model;
 
 
 import android.test.AndroidTestCase;
 
-import model.Table;
-import model.TableState;
+import es.bhavishchandnani.myrestaurant.R;
+import es.bhavishchandnani.myrestaurant.model.Table;
+import es.bhavishchandnani.myrestaurant.model.TableState;
 
 
 public class TableTests extends AndroidTestCase {
