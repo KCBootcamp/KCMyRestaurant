@@ -1,7 +1,7 @@
 package model;
 
 
-import android.content.res.Resources;
+import android.content.Context;
 
 import java.io.Serializable;
 
@@ -42,8 +42,8 @@ public class Table implements Serializable{
         this.state = state;
     }
 
-    public String getName() {
-        return String.format(Resources.getSystem().getString(R.string.table_name_format), id);
+    public String getName(Context ctx) {
+        return String.format(ctx.getString(R.string.table_name_format), id);
     }
 
     public int getIconId() {
