@@ -2,21 +2,22 @@ package model;
 
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.List;
 import java.util.Locale;
 
 public class Dish implements Serializable {
     private String name;
+    private DishType type;
     private String photoUrl;
-    private List<String> allergens;
-    private BigDecimal price;
+    private List<Allergens> allergens;
+    private double price;
     private Currency currency;
     private String description;
 
-    public Dish(String name, String photoUrl, List<String> allergens, BigDecimal price, Currency currency, String description) {
+    public Dish(String name, DishType type,  String photoUrl, List<Allergens> allergens, double price, Currency currency, String description) {
         this.name = name;
+        this.type =  type;
         this.photoUrl = photoUrl;
         this.allergens = allergens;
         this.price = price;
@@ -24,8 +25,8 @@ public class Dish implements Serializable {
         this.description = description;
     }
 
-    public Dish(String name, List<String> allergens, BigDecimal price) {
-        this(name, null, allergens, price, Currency.getInstance(Locale.FRANCE), "");
+    public Dish(String name, DishType type, List<Allergens> allergens, double price) {
+        this(name, type, null, allergens, price, Currency.getInstance(Locale.FRANCE), null);
     }
 
     public String getName() {
@@ -44,19 +45,19 @@ public class Dish implements Serializable {
         this.photoUrl = photoUrl;
     }
 
-    public List<String> getAllergens() {
+    public List<Allergens> getAllergens() {
         return allergens;
     }
 
-    public void setAllergens(List<String> allergens) {
+    public void setAllergens(List<Allergens> allergens) {
         this.allergens = allergens;
     }
 
-    public BigDecimal getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -75,4 +76,13 @@ public class Dish implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public DishType getType() {
+        return type;
+    }
+
+    public void setType(DishType type) {
+        this.type = type;
+    }
 }
+
