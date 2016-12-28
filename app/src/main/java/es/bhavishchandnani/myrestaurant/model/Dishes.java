@@ -1,6 +1,7 @@
 package es.bhavishchandnani.myrestaurant.model;
 
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Dishes {
@@ -21,6 +22,16 @@ public class Dishes {
 
     public Dish getDish(int position){
         return dishes.get(position);
+    }
+
+    public List<Dish> getDishesWithType(DishType type){
+        List<Dish> filteredDishes = new LinkedList<>();
+        for (Dish dish : dishes) {
+            if (dish.getType().equals(type)){
+                filteredDishes.add(dish);
+            }
+        }
+        return filteredDishes;
     }
 
     public int getCount() {
