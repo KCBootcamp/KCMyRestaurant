@@ -15,4 +15,7 @@
     <string name="allergen_sesame_seed">Granos de sésamo</string>
     <string name="allergen_soya">Soja</string>
     <string name="allergen_sulphites">Dióxido de azufre y sulfitos</string>
+    <string name="dishes">Platos</string>
+    <string name="allergens">Alérgenos</string>
+    <string name="tables">Mesas</string>
 </resources>
