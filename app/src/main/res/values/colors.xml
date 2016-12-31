@@ -7,6 +7,7 @@
     <color name="colorMidGreen">#5C9E0F</color>
     <color name="colorLightGreen">#9DD65B</color>
     <color name="colorDarkGrey">#616161</color>
+    <color name="colorMidGrey">#B6B6B6</color>
     <color name="colorLightGrey">#DADADA</color>
     <color name="colorOrange">#CC7A23</color>
 </resources>
