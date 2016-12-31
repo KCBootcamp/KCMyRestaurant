@@ -15,4 +15,9 @@
     <string name="allergen_sesame_seed">Granos de sésamo</string>
     <string name="allergen_soya">Soja</string>
     <string name="allergen_sulphites">Dióxido de azufre y sulfitos</string>
+    <string name="dishes">Platos</string>
+    <string name="allergens">Alérgenos</string>
+    <string name="tables">Mesas</string>
+    <string name="dishes_url">http://www.mocky.io/v2/58656456110000c00fcf8e2c</string>
+    <string name="data_download_error">Se ha producido un error al descargar los datos</string>
 </resources>

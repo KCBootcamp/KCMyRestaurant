@@ -38,7 +38,7 @@ public class DishesTest extends AndroidTestCase {
     }
 
     public Dish getDish(int number){
-        Dish dish = new Dish(DISH + " "+ number, DishType.FIRST_PLATE, ALLERGENS, PRICE + number);
+        Dish dish = new Dish(DISH + " "+ number, DishType.FIRST_COURSE, ALLERGENS, PRICE + number);
         dish.setCurrency(CURRENCY);
         dish.setDescription(DESCRIPTION + " " + number);
         dish.setPhotoUrl(PHOTOURL + " " + number);

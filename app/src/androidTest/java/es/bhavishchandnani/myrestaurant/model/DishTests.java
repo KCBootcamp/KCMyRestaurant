@@ -18,7 +18,7 @@ public class DishTests extends AndroidTestCase {
     public static final Currency CURRENCY = Currency.getInstance(Locale.FRANCE);
 
     public void testCreateADish(){
-        Dish sut = new Dish(DISH, DishType.FIRST_PLATE, ALLERGENS, PRICE);
+        Dish sut = new Dish(DISH, DishType.FIRST_COURSE, ALLERGENS, PRICE);
         assertNotNull(sut);
     }
 
@@ -30,7 +30,7 @@ public class DishTests extends AndroidTestCase {
     }
 
     public void testDishStoresProperties(){
-        Dish sut = new Dish(DISH, DishType.FIRST_PLATE, ALLERGENS, PRICE);
+        Dish sut = new Dish(DISH, DishType.FIRST_COURSE, ALLERGENS, PRICE);
         sut.setCurrency(CURRENCY);
         sut.setDescription(DESCRIPTION);
         sut.setPhotoUrl(PHOTOURL);

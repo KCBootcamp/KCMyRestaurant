@@ -6,10 +6,16 @@ import java.util.List;
 
 public class Dishes {
 
+    private static Dishes instance;
     private List<Dish> dishes;
 
-    public Dishes(List<Dish> dishes) {
-        this.dishes = dishes;
+    private Dishes(){}
+
+    public static Dishes getInstance() {
+        if (instance == null){
+            instance = new Dishes();
+        }
+        return instance;
     }
 
     public List<Dish> getDishes() {
