@@ -42,6 +42,18 @@
             android:layout_height="match_parent"
             android:layout_gravity="center">
             <LinearLayout
+                android:id="@+id/activity_my_restaurant_progress_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:progressTint="@color/colorDarkGreen"
+                    android:indeterminateTint="@color/colorDarkGreen"/>
+
+            </LinearLayout>
+            <LinearLayout
                 android:id="@+id/activity_my_restaurant_buttons_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -99,18 +111,7 @@
                     android:textSize="@dimen/small_text_size_dim"
                     android:textAlignment="center"/>
             </LinearLayout>
-            <LinearLayout
-                android:id="@+id/activity_my_restaurant_progress_layout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center">
-                <ProgressBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:progressTint="@color/colorDarkGreen"
-                    android:indeterminateTint="@color/colorDarkGreen"/>
 
-            </LinearLayout>
         </ViewSwitcher>
     </LinearLayout>
 
