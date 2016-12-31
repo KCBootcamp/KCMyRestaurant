@@ -3,8 +3,8 @@ package es.bhavishchandnani.myrestaurant.model;
 
 public enum DishType {
     STARTER,
-    FIRST_PLATE,
-    SECOND_PLATE,
+    FIRST_COURSE,
+    SECOND_COURSE,
     DESSERT,
     DRINK
 }
