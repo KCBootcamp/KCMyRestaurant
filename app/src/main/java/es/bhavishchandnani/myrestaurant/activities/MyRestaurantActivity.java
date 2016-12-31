@@ -1,5 +1,6 @@
 package es.bhavishchandnani.myrestaurant.activities;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -22,6 +23,8 @@ import es.bhavishchandnani.myrestaurant.model.Dishes;
 public class MyRestaurantActivity extends AppCompatActivity implements View.OnClickListener {
     private ViewSwitcher viewSwitcher;
     private Button dishesBtn;
+    private Button allergensBtn;
+    private Button tablesBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class MyRestaurantActivity extends AppCompatActivity implements View.OnCl
 
     private void getAllDishes() {
         new DownloadAllDishes(this).execute(new CommunicationsInterface() {
+
             @Override
             public void getDataSuccess(String response) {
                 new CacheData().execute(response);
@@ -51,25 +55,35 @@ public class MyRestaurantActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View view) {
+        Intent intent = null;
         switch (view.getId()){
             case R.id.activity_my_restaurant_allergens_btn:
+                intent = new Intent(this, AllergensActivity.class);
                 break;
             case R.id.activity_my_restaurant_dishes_btn:
+                intent = new Intent(this, DishesActivity.class);
                 break;
             case R.id.activity_my_restaurant_tables_btn:
+                intent = new Intent(this, TablesActivity.class);
                 break;
             default:
                 break;
         }
-
+        if (intent != null) {
+            startActivity(intent);
+        }
     }
 
     private void setViews(){
         viewSwitcher = (ViewSwitcher) findViewById(R.id.activity_my_restaurant_loading_view_switcher);
         dishesBtn = (Button) findViewById(R.id.activity_my_restaurant_dishes_btn);
+        allergensBtn = (Button) findViewById(R.id.activity_my_restaurant_allergens_btn);
+        tablesBtn = (Button) findViewById(R.id.activity_my_restaurant_tables_btn);
+
+        dishesBtn.setOnClickListener(this);
+        allergensBtn.setOnClickListener(this);
+        tablesBtn.setOnClickListener(this);
     }
-
-
 
     private class CacheData extends AsyncTask<String, Void, Dishes>{
 
@@ -86,7 +100,6 @@ public class MyRestaurantActivity extends AppCompatActivity implements View.OnCl
             Animation fadeIn = AnimationUtils.loadAnimation(MyRestaurantActivity.this, android.R.anim.fade_in);
             viewSwitcher.setAnimation(fadeIn);
             viewSwitcher.showNext();
-
         }
     }
 }
