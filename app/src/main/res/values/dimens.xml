@@ -7,4 +7,8 @@
     <dimen name="button_margin">6dp</dimen>
     <dimen name="button_padding">2dp</dimen>
     <dimen name="small_text_size_dim">12sp</dimen>
+    <dimen name="big_text_dim">20sp</dimen>
+    <dimen name="squared_btn_small_dim">20dp</dimen>
+    <dimen name="toolbar_horizontal_padding">8dp</dimen>
+    <dimen name="toolbar_btn_vertical_margin">4dp</dimen>
 </resources>
