@@ -1,6 +1,9 @@
 package es.bhavishchandnani.myrestaurant.model;
 
 
+import java.util.Arrays;
+import java.util.LinkedList;
+
 import es.bhavishchandnani.myrestaurant.R;
 
 public enum Allergens {
@@ -19,11 +22,16 @@ public enum Allergens {
     SOYA(R.string.allergen_soya, R.drawable.ic_allergen_soya),
     SULPHITES(R.string.allergen_sulphites, R.drawable.ic_allergen_sulphites);
 
-    private final int stringId;
-    private final int iconId;
+    public final int stringId;
+    public final int iconId;
 
     Allergens(int stringId, int iconId) {
         this.stringId = stringId;
         this.iconId = iconId;
+    }
+
+    public static LinkedList<Allergens> getAllergens(){
+        LinkedList<Allergens> allergensList = new LinkedList<>(Arrays.asList(Allergens.values()));
+        return allergensList;
     }
 }
