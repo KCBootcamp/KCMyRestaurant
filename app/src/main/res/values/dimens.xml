@@ -11,4 +11,9 @@
     <dimen name="squared_btn_small_dim">20dp</dimen>
     <dimen name="toolbar_horizontal_padding">8dp</dimen>
     <dimen name="toolbar_btn_vertical_margin">4dp</dimen>
+    <dimen name="row_height">100dp</dimen>
+    <dimen name="text_image_margin">16dp</dimen>
+    <dimen name="row_text_dim">17sp</dimen>
+    <dimen name="fragment_horizontal_margin">12dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>
