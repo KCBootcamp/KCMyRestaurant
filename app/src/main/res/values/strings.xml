@@ -18,6 +18,13 @@
     <string name="dishes">Platos</string>
     <string name="allergens">Alérgenos</string>
     <string name="tables">Mesas</string>
-    <string name="dishes_url">http://www.mocky.io/v2/58656456110000c00fcf8e2c</string>
+    <string name="dishes_url">http://www.mocky.io/v2/586c258b110000a11b2e0e8e</string>
     <string name="data_download_error">Se ha producido un error al descargar los datos</string>
+    <string name="starter">Entrante</string>
+    <string name="first_course">Primer plato</string>
+    <string name="second_course">Segundo plato</string>
+    <string name="dessert">Postre</string>
+    <string name="drink">Bebida</string>
+    <string name="detail_dish_type_header">"Tipo: "</string>
+    <string name="detail_description_header">Descripción</string>
 </resources>

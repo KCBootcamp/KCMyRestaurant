@@ -21,7 +21,8 @@ public class DishesTest extends AndroidTestCase {
 
     public void testCreateDishesNoReturnsNull(){
         List<Dish> data = getDishes();
-        Dishes sut = new Dishes(data);
+        Dishes sut = Dishes.getInstance();
+        sut.setDishes(data);
         assertNotNull(sut);
         assertNotNull(sut.getCount());
         assertEquals(sut.getDishes(), data);

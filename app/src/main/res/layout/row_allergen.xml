@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/row_height"
+    android:padding="@dimen/row_margin">
+
+    <include layout="@layout/icon_centered"/>
+
+    <TextView
+        android:id="@+id/row_allergen_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        tools:text="Texto de ejemplo"
+        android:textSize="@dimen/row_text_dim"
+        android:layout_marginLeft="@dimen/text_image_margin"/>
+
+</LinearLayout>

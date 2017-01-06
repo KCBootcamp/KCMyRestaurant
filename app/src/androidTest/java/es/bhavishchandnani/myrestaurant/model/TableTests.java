@@ -4,8 +4,6 @@ package es.bhavishchandnani.myrestaurant.model;
 import android.test.AndroidTestCase;
 
 import es.bhavishchandnani.myrestaurant.R;
-import es.bhavishchandnani.myrestaurant.model.Table;
-import es.bhavishchandnani.myrestaurant.model.TableState;
 
 
 public class TableTests extends AndroidTestCase {
@@ -33,7 +31,7 @@ public class TableTests extends AndroidTestCase {
         assertEquals(STATE,sut.getState());
 
         assertEquals(String.format(getContext().getString(es.bhavishchandnani.myrestaurant.R.string.table_name_format), id), sut.getName(getContext()));
-        assertEquals(R.mipmap.ic_table_pending,sut.getIconId());
+        assertEquals(R.drawable.ic_table_pending,sut.getIconId());
     }
 
 }
