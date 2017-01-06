@@ -3,6 +3,7 @@ package es.bhavishchandnani.myrestaurant.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
@@ -14,6 +15,8 @@ import es.bhavishchandnani.myrestaurant.model.Dish;
 import es.bhavishchandnani.myrestaurant.model.Table;
 import es.bhavishchandnani.myrestaurant.model.Tables;
 import es.bhavishchandnani.myrestaurant.utils.Constants;
+import es.bhavishchandnani.myrestaurant.views.CustomViews;
+import es.bhavishchandnani.myrestaurant.views.DialogListener;
 import es.bhavishchandnani.myrestaurant.views.ToolbarInterface;
 
 import static es.bhavishchandnani.myrestaurant.views.CustomViews.setCustomToolbarView;
@@ -23,6 +26,7 @@ public class TableBillActivity extends AppCompatActivity {
     private Table table;
     private TableBillFragment tableBillFragment;
     private TextView totalPriceText;
+    private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +70,31 @@ public class TableBillActivity extends AppCompatActivity {
 
             @Override
             public void onRightButtonClicked() {
-                setResult(RESULT_OK);
-                finish();
+                final AlertDialog.Builder builder = new AlertDialog.Builder(TableBillActivity.this);
+                dialog = CustomViews.buildGenericAlertDailog(builder,
+                        R.string.close_bill,
+                        R.string.close_bill_question,
+                        R.drawable.my_restaurant_logo,
+                        android.R.string.yes,
+                        android.R.string.no,
+                        new DialogListener() {
+                            @Override
+                            public void OnPositiveClick() {
+                                dialog.show();
+                                table.clearTable();
+                                Tables.getInstance().setTable(table.getId()-1, table);
+                                setResult(RESULT_OK);
+                                finish();
+                            }
+
+                            @Override
+                            public void OnNegativeClick() {
+                                if (dialog != null) {
+                                    dialog.dismiss();
+                                }
+                            }
+                        });
+                dialog.show();
             }
         };
 

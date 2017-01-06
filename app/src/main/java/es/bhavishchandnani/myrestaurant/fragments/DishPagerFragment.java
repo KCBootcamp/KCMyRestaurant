@@ -27,11 +27,13 @@ public class DishPagerFragment extends Fragment {
     private int pos;
     private int initialDishIndex;
     private int tableIndex;
+    private boolean isCombinedFragment;
 
-    public static DishPagerFragment newInstance(int dishIndex, int tableIndex) {
+    public static DishPagerFragment newInstance(int dishIndex, int tableIndex, boolean isCombinedFragment) {
         Bundle arguments = new Bundle();
         arguments.putInt(Constants.INTENT_KEY_DISH_POSITION, dishIndex);
         arguments.putInt(Constants.INTENT_KEY_TABLE_POSITION, tableIndex);
+        arguments.putBoolean(Constants.INTENT_KEY_TABLE_COMBINED, isCombinedFragment);
 
         DishPagerFragment dishPagerFragment = new DishPagerFragment();
         dishPagerFragment.setArguments(arguments);
@@ -53,6 +55,7 @@ public class DishPagerFragment extends Fragment {
         if (getArguments() != null) {
             initialDishIndex = getArguments().getInt(Constants.INTENT_KEY_DISH_POSITION, 0);
             tableIndex = getArguments().getInt(Constants.INTENT_KEY_TABLE_POSITION, 0);
+            isCombinedFragment = getArguments().getBoolean(Constants.INTENT_KEY_TABLE_COMBINED);
             if (tableIndex == 0) {
                 dishList = Dishes.getInstance().getDishes();
             } else {
@@ -106,15 +109,17 @@ public class DishPagerFragment extends Fragment {
         ImageView leftImage = (ImageView) getActivity().findViewById(R.id.toolbar_left_btn);
         ImageView rightImage = (ImageView) getActivity().findViewById(R.id.toolbar_right_btn);
         title.setText(dishList.get(position).getName());
-        if (pos == 0) {
-            leftImage.setVisibility(View.INVISIBLE);
-            rightImage.setVisibility(View.VISIBLE);
-        } else if (pos == dishList.size()-1) {
-            leftImage.setVisibility(View.VISIBLE);
-            rightImage.setVisibility(View.INVISIBLE);
-        } else {
-            leftImage.setVisibility(View.VISIBLE);
-            rightImage.setVisibility(View.VISIBLE);
+        if (!isCombinedFragment) {
+            if (pos == 0) {
+                leftImage.setVisibility(View.INVISIBLE);
+                rightImage.setVisibility(View.VISIBLE);
+            } else if (pos == dishList.size() - 1) {
+                leftImage.setVisibility(View.VISIBLE);
+                rightImage.setVisibility(View.INVISIBLE);
+            } else {
+                leftImage.setVisibility(View.VISIBLE);
+                rightImage.setVisibility(View.VISIBLE);
+            }
         }
     }
 

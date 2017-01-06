@@ -4,6 +4,7 @@ package es.bhavishchandnani.myrestaurant.model;
 import android.content.Context;
 
 import java.io.Serializable;
+import java.util.LinkedList;
 import java.util.List;
 
 import es.bhavishchandnani.myrestaurant.R;
@@ -71,5 +72,11 @@ public class Table implements Serializable{
 
     public void removeDishToDishList (int position){
         dishList.remove(position);
+    }
+
+    public void clearTable() {
+        dishList = new LinkedList<Dish>();
+        people = 0;
+        state = TableState.EMPTY;
     }
 }
