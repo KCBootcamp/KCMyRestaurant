@@ -4,7 +4,6 @@ package es.bhavishchandnani.myrestaurant.fragments;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,7 @@ import java.util.LinkedList;
 import es.bhavishchandnani.myrestaurant.R;
 import es.bhavishchandnani.myrestaurant.adapters.AllergensAdapter;
 import es.bhavishchandnani.myrestaurant.model.Allergens;
+import es.bhavishchandnani.myrestaurant.views.GridAutofitLayoutManager;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,7 +35,7 @@ public class AllergensListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
         allergensRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        allergensRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        allergensRecyclerView.setLayoutManager(new GridAutofitLayoutManager(getActivity(), Math.round(getResources().getDimension(R.dimen.row_width))));
 
         FloatingActionButton addBtn = (FloatingActionButton) view.findViewById(R.id.add_button);
         addBtn.setVisibility(View.GONE);

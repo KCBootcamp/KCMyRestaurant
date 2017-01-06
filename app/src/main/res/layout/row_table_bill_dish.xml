@@ -11,15 +11,16 @@
         android:id="@+id/row_table_bill_dish_img"
         android:layout_width="@dimen/zero_dim"
         android:layout_height="match_parent"
-        android:layout_weight="0.3"
+        android:layout_weight="0.25"
         android:scaleType="centerCrop"/>
     <TextView
         android:id="@+id/row_table_bill_dish_text"
         android:layout_width="@dimen/zero_dim"
         android:layout_height="match_parent"
+        android:padding="@dimen/button_padding"
         android:textSize="@dimen/mid_text_size_dim"
-        android:gravity="center_vertical"
-        android:layout_weight="0.4"/>
+        android:gravity="center"
+        android:layout_weight="0.5"/>
 
     <TextView
         android:id="@+id/row_table_bill_dish_price"
@@ -27,7 +28,7 @@
         android:layout_height="match_parent"
         android:textSize="@dimen/very_big_text_size_dim"
         android:gravity="center"
-        android:layout_weight="0.3"/>
+        android:layout_weight="0.25"/>
 
 
 </LinearLayout>

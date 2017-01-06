@@ -31,7 +31,7 @@ public class DishPagerActivity extends AppCompatActivity {
                 getToolbarInterface());
 
         FragmentManager fm = getFragmentManager();
-        dishPagerFragment = DishPagerFragment.newInstance(positionDish, positionTable);
+        dishPagerFragment = DishPagerFragment.newInstance(positionDish, positionTable, false);
 
         fm.beginTransaction()
                 .add(R.id.fragment_dish_pager, dishPagerFragment)
