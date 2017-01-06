@@ -35,4 +35,10 @@
     <string name="table_people_header">Nº de comensales: </string>
     <string name="zero_number">0</string>
     <string name="edit_table_parameters">Configura la mesa</string>
+    <string name="add_dish">Añadir plato</string>
+    <string name="add_dish_to_table_question">¿Quiere añadir este plato al pedido de la mesa?</string>
+    <string name="remove_dish">Eliminar plato</string>
+    <string name="remove_dish_to_table_question">¿Quiere eliminar este plato al pedido de la mesa?</string>
+    <string name="table_has_no_dishes">LA mesa seleccionada no tiene platos</string>
+
 </resources>
