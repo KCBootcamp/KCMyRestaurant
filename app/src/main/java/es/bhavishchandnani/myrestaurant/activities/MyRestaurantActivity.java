@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ViewSwitcher;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import es.bhavishchandnani.myrestaurant.R;
@@ -19,6 +20,11 @@ import es.bhavishchandnani.myrestaurant.communications.DownloadAllDishes;
 import es.bhavishchandnani.myrestaurant.mappers.DishMapper;
 import es.bhavishchandnani.myrestaurant.model.Dish;
 import es.bhavishchandnani.myrestaurant.model.Dishes;
+import es.bhavishchandnani.myrestaurant.model.Table;
+import es.bhavishchandnani.myrestaurant.model.TableState;
+import es.bhavishchandnani.myrestaurant.model.Tables;
+import es.bhavishchandnani.myrestaurant.navigation.Navigator;
+import es.bhavishchandnani.myrestaurant.utils.Constants;
 
 public class MyRestaurantActivity extends AppCompatActivity implements View.OnClickListener {
     private ViewSwitcher viewSwitcher;
@@ -58,19 +64,16 @@ public class MyRestaurantActivity extends AppCompatActivity implements View.OnCl
         Intent intent = null;
         switch (view.getId()){
             case R.id.activity_my_restaurant_allergens_btn:
-                intent = new Intent(this, AllergensActivity.class);
+                Navigator.NavigateToAllegensActivity(this);
                 break;
             case R.id.activity_my_restaurant_dishes_btn:
-                intent = new Intent(this, DishesActivity.class);
+                Navigator.NavigateToDishesActivity(this, false);
                 break;
             case R.id.activity_my_restaurant_tables_btn:
-                intent = new Intent(this, TablesActivity.class);
+                Navigator.NavigateToTablesActivity(this);
                 break;
             default:
                 break;
-        }
-        if (intent != null) {
-            startActivity(intent);
         }
     }
 
@@ -91,7 +94,16 @@ public class MyRestaurantActivity extends AppCompatActivity implements View.OnCl
         protected Dishes doInBackground(String... strings) {
             List<Dish> dishList = DishMapper.mapDishList(strings[0]);
             Dishes.getInstance().setDishes(dishList);
+            Tables.getInstance().setTables(getExampleTableListModel());
             return null;
+        }
+
+        private List<Table> getExampleTableListModel() {
+            List<Table> tablesList = new LinkedList<>();
+            for (int i = 0; i < Constants.NUMBER_OF_TABLES; i++){
+                tablesList.add(new Table(i+1, 4, TableState.EMPTY, new LinkedList<Dish>()));
+            }
+            return tablesList;
         }
 
         @Override
