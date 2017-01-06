@@ -3,16 +3,13 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:orientation="horizontal"
               android:layout_width="match_parent"
-              android:layout_height="@dimen/row_height">
+              android:layout_height="@dimen/row_height"
+    android:padding="@dimen/row_margin">
 
-    <ImageView
-        android:id="@+id/row_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        tools:src="@drawable/ic_allergen"/>
+    <include layout="@layout/icon_centered"/>
 
     <TextView
-        android:id="@+id/row_text"
+        android:id="@+id/row_allergen_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical"

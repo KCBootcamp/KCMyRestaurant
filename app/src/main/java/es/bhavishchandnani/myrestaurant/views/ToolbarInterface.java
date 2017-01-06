@@ -1,7 +1,8 @@
 package es.bhavishchandnani.myrestaurant.views;
 
 
-public interface ToolbarClickInterface {
+
+public interface ToolbarInterface {
     void onLeftButtonClicked();
     void onRightButtonClicked();
 }
