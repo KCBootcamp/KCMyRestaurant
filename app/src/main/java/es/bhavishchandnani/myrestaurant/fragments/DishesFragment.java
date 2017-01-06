@@ -14,9 +14,9 @@ import java.util.List;
 import es.bhavishchandnani.myrestaurant.R;
 import es.bhavishchandnani.myrestaurant.adapters.DishesAdapter;
 import es.bhavishchandnani.myrestaurant.model.Dish;
-import es.bhavishchandnani.myrestaurant.model.Dishes;
 import es.bhavishchandnani.myrestaurant.views.GridAutofitLayoutManager;
 import es.bhavishchandnani.myrestaurant.views.OnElementClick;
+import es.bhavishchandnani.myrestaurant.views.OnElementLongClick;
 
 public class DishesFragment extends Fragment {
 
@@ -24,6 +24,9 @@ public class DishesFragment extends Fragment {
     private DishesAdapter adapter;
     private List<Dish> dishes;
     private OnElementClick<Dish> listener;
+    private View.OnClickListener fabListener;
+    FloatingActionButton addBtn;
+    private OnElementLongClick<Dish> longClickListener;
 
     public DishesFragment() {
         // Required empty public constructor
@@ -36,7 +39,7 @@ public class DishesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
         dishesRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         dishesRecyclerView.setLayoutManager(new GridAutofitLayoutManager(getActivity(),Math.round(getResources().getDimension(R.dimen.card_width))));
-        FloatingActionButton addBtn = (FloatingActionButton) view.findViewById(R.id.add_button);
+        addBtn = (FloatingActionButton) view.findViewById(R.id.add_button);
         addBtn.setVisibility(View.GONE);
 
         return view;
@@ -54,15 +57,35 @@ public class DishesFragment extends Fragment {
             }
         });
 
+        adapter.setOnElementLongClickListener(new OnElementLongClick<Dish>() {
+            @Override
+            public void longClickedOn(Dish element, int position) {
+                if (longClickListener != null){
+                    longClickListener.longClickedOn(element, position);
+                }
+            }
+        });
+
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fabListener.onClick(view);
+            }
+        });
+
     }
 
     public List<Dish> getDishes() {
         return dishes;
     }
 
-    public void setDishes(Dishes dishes) {
-        this.dishes = dishes.getDishes();
+    public void setDishes(List<Dish> dishes) {
+        this.dishes = dishes;
         updateUI();
+    }
+
+    public void setFABVisibility(int visibility){
+        addBtn.setVisibility(visibility);
     }
 
     public OnElementClick<Dish> getListener() {
@@ -73,5 +96,11 @@ public class DishesFragment extends Fragment {
         this.listener = listener;
     }
 
+    public void setFABListener(View.OnClickListener listener) {
+        this.fabListener = listener;
+    }
 
+    public void setLongClickListener(OnElementLongClick<Dish> longClickListener) {
+        this.longClickListener = longClickListener;
+    }
 }

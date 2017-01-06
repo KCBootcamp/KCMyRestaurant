@@ -2,19 +2,19 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_tables"
-    android:orientation="vertical"
+    android:id="@+id/activity_table_order"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="es.bhavishchandnani.myrestaurant.activities.TablesActivity">
-
+    android:orientation="vertical"
+    tools:context="es.bhavishchandnani.myrestaurant.activities.TableOrderActivity">
     <include layout="@layout/toolbar"/>
 
     <fragment
-        android:id="@+id/fragment_tables"
-        android:name="es.bhavishchandnani.myrestaurant.fragments.TablesFragment"
+        android:id="@+id/fragment_dishes"
+        android:name="es.bhavishchandnani.myrestaurant.fragments.DishesFragment"
         android:layout_marginLeft="@dimen/fragment_horizontal_margin"
         android:layout_marginRight="@dimen/fragment_horizontal_margin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 </LinearLayout>

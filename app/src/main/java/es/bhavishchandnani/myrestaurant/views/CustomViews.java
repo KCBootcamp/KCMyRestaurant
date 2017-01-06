@@ -1,6 +1,8 @@
 package es.bhavishchandnani.myrestaurant.views;
 
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -41,5 +43,23 @@ public class CustomViews {
             activity.setSupportActionBar(toolbar);
             activity.getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
+    }
+
+    public static AlertDialog buildGenericAlertDailog(AlertDialog.Builder builder, int title, int message, int iconId, int positiveBtnText, int negativeBtnText, final DialogListener dialogListener){
+        builder
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(positiveBtnText, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialogListener.OnPositiveClick();
+                    }
+                })
+                .setNegativeButton(negativeBtnText, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialogListener.OnNegativeClick();
+                    }
+                })
+                .setIcon(iconId);
+        return builder.create();
     }
 }

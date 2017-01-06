@@ -27,7 +27,6 @@ public class DishPagerFragment extends Fragment {
     private int pos;
     private int initialDishIndex;
     private int tableIndex;
-    private View toolbar;
 
     public static DishPagerFragment newInstance(int dishIndex, int tableIndex) {
         Bundle arguments = new Bundle();
@@ -43,11 +42,7 @@ public class DishPagerFragment extends Fragment {
 
     public DishPagerFragment() {
         // Required empty public constructor
-        if (tableIndex == 0) {
-            dishList = Dishes.getInstance().getDishes();
-        } else {
-            dishList = Tables.getInstance().getTable(tableIndex).getDishList();
-        }
+
 
     }
 
@@ -58,6 +53,11 @@ public class DishPagerFragment extends Fragment {
         if (getArguments() != null) {
             initialDishIndex = getArguments().getInt(Constants.INTENT_KEY_DISH_POSITION, 0);
             tableIndex = getArguments().getInt(Constants.INTENT_KEY_TABLE_POSITION, 0);
+            if (tableIndex == 0) {
+                dishList = Dishes.getInstance().getDishes();
+            } else {
+                dishList = Tables.getInstance().getTable(tableIndex).getDishList();
+            }
             pos = initialDishIndex;
         }
 

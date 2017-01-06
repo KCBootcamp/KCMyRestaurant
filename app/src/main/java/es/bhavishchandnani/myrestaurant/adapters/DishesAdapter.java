@@ -15,6 +15,7 @@ import es.bhavishchandnani.myrestaurant.R;
 import es.bhavishchandnani.myrestaurant.model.Dish;
 import es.bhavishchandnani.myrestaurant.views.DishItemViewHolder;
 import es.bhavishchandnani.myrestaurant.views.OnElementClick;
+import es.bhavishchandnani.myrestaurant.views.OnElementLongClick;
 
 import static android.content.ContentValues.TAG;
 
@@ -24,6 +25,7 @@ public class DishesAdapter extends RecyclerView.Adapter<DishItemViewHolder> {
     private final List<Dish> dishes;
 
     private OnElementClick<Dish> listener;
+    private OnElementLongClick<Dish> onElementLongClickListener;
 
     public DishesAdapter(Context context, List<Dish> dishes) {
         this.layoutInflater = LayoutInflater.from(context);
@@ -51,6 +53,14 @@ public class DishesAdapter extends RecyclerView.Adapter<DishItemViewHolder> {
                 }
             }
         });
+
+        item.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                onElementLongClickListener.longClickedOn(dish, position);
+                return true;
+            }
+        });
     }
 
     @Override
@@ -60,5 +70,9 @@ public class DishesAdapter extends RecyclerView.Adapter<DishItemViewHolder> {
 
     public void setOnElementClickListener(@NonNull final OnElementClick listener){
         this.listener =  listener;
+    }
+
+    public void setOnElementLongClickListener(OnElementLongClick<Dish> onElementLongClickListener) {
+        this.onElementLongClickListener = onElementLongClickListener;
     }
 }

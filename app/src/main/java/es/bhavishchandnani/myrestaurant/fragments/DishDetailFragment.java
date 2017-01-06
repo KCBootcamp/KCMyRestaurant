@@ -56,7 +56,7 @@ public class DishDetailFragment extends Fragment {
         setAllergensView(allergensLayout);
 
         dishPriceText.setText(dish.getPrice() + " " + dish.getCurrency().getSymbol());
-        dishTypeText.setText(getString(R.string.detail_dish_type_header) + getResources().getString(dish.getType().getDishTypeNameId()));
+        dishTypeText.setText(getString(R.string.detail_dish_type_header) + getString(dish.getType().getDishTypeNameId()));
         descriptionText.setText(dish.getDescription());
         Picasso.with(root.getContext()).load(dish.getPhotoUrl()).placeholder(android.R.drawable.ic_menu_camera).into(imageView);
         return root;
