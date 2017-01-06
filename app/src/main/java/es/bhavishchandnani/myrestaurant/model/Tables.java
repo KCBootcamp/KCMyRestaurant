@@ -5,10 +5,17 @@ import java.util.List;
 
 public class Tables {
 
+    private static Tables instance;
     private List<Table> tables;
 
-    public Tables(List<Table> tables) {
-        this.tables = tables;
+
+    private Tables() {}
+
+    public static Tables getInstance() {
+        if (instance == null){
+            instance = new Tables();
+        }
+        return instance;
     }
 
     public List<Table> getTables() {
@@ -19,7 +26,7 @@ public class Tables {
         this.tables = tables;
     }
 
-    public Table getDish(int position){
+    public Table getTable(int position){
         return tables.get(position);
     }
 

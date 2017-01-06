@@ -20,8 +20,8 @@ public class AllergenRowViewHolder extends RecyclerView.ViewHolder {
     public AllergenRowViewHolder(View itemView) {
         super(itemView);
         context = itemView.getContext();
-        nameTextView = (TextView) itemView.findViewById(R.id.row_text);
-        iconImageView = (ImageView) itemView.findViewById(R.id.row_icon);
+        nameTextView = (TextView) itemView.findViewById(R.id.row_allergen_text);
+        iconImageView = (ImageView) itemView.findViewById(R.id.icon_centered_icon);
 
     }
 
