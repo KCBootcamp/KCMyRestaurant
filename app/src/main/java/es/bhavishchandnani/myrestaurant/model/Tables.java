@@ -30,6 +30,10 @@ public class Tables {
         return tables.get(position);
     }
 
+    public void setTable(int position, Table table){
+        tables.set(position, table);
+    }
+
     public int getCount() {
         return tables.size();
     }

@@ -60,4 +60,16 @@ public class Table implements Serializable{
     public void setDishList(List<Dish> dishList) {
         this.dishList = dishList;
     }
+
+    public void addDishToDishList (Dish dish){
+        dishList.add(dish);
+    }
+
+    public void removeDishToDishList (Dish dish){
+        dishList.remove(dish);
+    }
+
+    public void removeDishToDishList (int position){
+        dishList.remove(position);
+    }
 }

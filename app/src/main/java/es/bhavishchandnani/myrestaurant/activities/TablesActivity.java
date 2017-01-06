@@ -15,6 +15,7 @@ import es.bhavishchandnani.myrestaurant.adapters.TableStateAdapter;
 import es.bhavishchandnani.myrestaurant.fragments.TablesFragment;
 import es.bhavishchandnani.myrestaurant.model.Table;
 import es.bhavishchandnani.myrestaurant.model.TableState;
+import es.bhavishchandnani.myrestaurant.navigation.Navigator;
 import es.bhavishchandnani.myrestaurant.views.GridAutofitLayoutManager;
 import es.bhavishchandnani.myrestaurant.views.OnElementClick;
 import es.bhavishchandnani.myrestaurant.views.OnElementLongClick;
@@ -41,6 +42,7 @@ public class TablesActivity extends AppCompatActivity {
         tablesFragment.setListener(new OnElementClick<Table>() {
             @Override
             public void clickedOn(Table table, int position) {
+                Navigator.NavigateToTableOrderActivity(TablesActivity.this, position);
             }
         });
         tablesFragment.setLongClickListener(new OnElementLongClick<Table>() {
@@ -73,7 +75,7 @@ public class TablesActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         });
-
+        dialogBuilder.setIcon(R.drawable.ic_my_restaurant);
         dialogBuilder.setTitle(R.string.edit_table_parameters);
         dialogBuilder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {

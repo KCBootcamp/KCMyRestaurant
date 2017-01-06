@@ -23,7 +23,13 @@
         </activity>
         <activity android:name=".activities.TablesActivity">
         </activity>
-        <activity android:name=".activities.DishPagerActivity" android:configChanges="orientation|screenSize">
+        <activity
+            android:name=".activities.DishPagerActivity"
+            android:configChanges="orientation|screenSize">
+        </activity>
+        <activity android:name=".activities.TableOrderActivity">
+        </activity>
+        <activity android:name=".activities.TableBillActivity">
         </activity>
     </application>
 
