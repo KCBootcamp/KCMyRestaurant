@@ -35,7 +35,7 @@ public class TableOrderActivity extends AppCompatActivity {
         setCustomToolbarView(this,
                 table.getName(this),
                 R.drawable.ic_my_restaurant,
-                R.drawable.ic_table_paid,
+                R.drawable.ic_table_order_bill,
                 getToolbarClickListener());
 
         dishesFragment = (DishesFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_dishes);
@@ -104,6 +104,8 @@ public class TableOrderActivity extends AppCompatActivity {
             table.addDishToDishList(dish);
             Tables.getInstance().setTable(table.getId()-1,table);
             dishesFragment.setDishes(table.getDishList());
+        } else if (requestCode == Constants.TABLE_BILL_REQUEST_CODE && resultCode == RESULT_OK){
+            finish();
         }
     }
 
@@ -117,7 +119,7 @@ public class TableOrderActivity extends AppCompatActivity {
 
             @Override
             public void onRightButtonClicked() {
-                Navigator.NavigateToTableBillActivity(TableOrderActivity.this,table.getId()-1);
+                Navigator.NavigateToTableBillActivityWtihResult(TableOrderActivity.this,table.getId()-1);
             }
         };
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:weightSum="1"
+              android:layout_marginTop="@dimen/row_margin"
+              android:layout_marginBottom="@dimen/row_margin"
+              android:layout_height="100dp">
+
+    <ImageView
+        android:id="@+id/row_table_bill_dish_img"
+        android:layout_width="@dimen/zero_dim"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:id="@+id/row_table_bill_dish_text"
+        android:layout_width="@dimen/zero_dim"
+        android:layout_height="match_parent"
+        android:textSize="@dimen/mid_text_size_dim"
+        android:gravity="center_vertical"
+        android:layout_weight="0.4"/>
+
+    <TextView
+        android:id="@+id/row_table_bill_dish_price"
+        android:layout_width="@dimen/zero_dim"
+        android:layout_height="match_parent"
+        android:textSize="@dimen/very_big_text_size_dim"
+        android:gravity="center"
+        android:layout_weight="0.3"/>
+
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_table_bill"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="es.bhavishchandnani.myrestaurant.activities.TableBillActivity">
+    <include layout="@layout/toolbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+    <fragment
+        android:id="@+id/fragment_table_bill_list"
+        android:name="es.bhavishchandnani.myrestaurant.fragments.TableBillFragment"
+        android:layout_marginLeft="@dimen/fragment_horizontal_margin"
+        android:layout_marginRight="@dimen/fragment_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_dim"
+        android:layout_weight="0.9"/>
+
+        <TextView
+            android:id="@+id/table_bill_total_price"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero_dim"
+            android:layout_weight="0.1"
+            android:background="@color/colorDarkGreen"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="@dimen/very_very_big_text_size_dim"
+            android:textColor="@color/colorLightGrey"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</LinearLayout>

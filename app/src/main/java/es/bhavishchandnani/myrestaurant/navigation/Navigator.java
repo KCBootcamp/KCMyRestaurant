@@ -7,6 +7,7 @@ import android.content.Intent;
 import es.bhavishchandnani.myrestaurant.activities.AllergensActivity;
 import es.bhavishchandnani.myrestaurant.activities.DishPagerActivity;
 import es.bhavishchandnani.myrestaurant.activities.DishesActivity;
+import es.bhavishchandnani.myrestaurant.activities.TableBillActivity;
 import es.bhavishchandnani.myrestaurant.activities.TableOrderActivity;
 import es.bhavishchandnani.myrestaurant.activities.TablesActivity;
 import es.bhavishchandnani.myrestaurant.utils.Constants;
@@ -50,10 +51,10 @@ public class Navigator {
         return i;
     }
 
-    public static Intent NavigateToTableBillActivity(Activity activity, int table) {
+    public static Intent NavigateToTableBillActivityWtihResult(Activity activity, int table) {
         final Intent i = new Intent(activity, TableBillActivity.class);
-        i.putExtra(Constants.INTENT_KEY_TABLE_ORDER_TABLE, table);
-        activity.startActivity(i);
+        i.putExtra(Constants.INTENT_KEY_TABLE_ORDER_BILL_TABLE, table);
+        activity.startActivityForResult(i,Constants.TABLE_BILL_REQUEST_CODE);
         return i;
     }
 }
