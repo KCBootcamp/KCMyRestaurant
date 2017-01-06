@@ -17,12 +17,14 @@ import es.bhavishchandnani.myrestaurant.adapters.TablesAdapter;
 import es.bhavishchandnani.myrestaurant.model.Table;
 import es.bhavishchandnani.myrestaurant.model.Tables;
 import es.bhavishchandnani.myrestaurant.views.OnElementClick;
+import es.bhavishchandnani.myrestaurant.views.OnElementLongClick;
 
 public class TablesFragment extends Fragment {
 
     private RecyclerView tablesRecyclerView;
     private TablesAdapter adapter;
     private OnElementClick<Table> listener;
+    private OnElementLongClick<Table> longClickListener;
 
     public TablesFragment() {
     }
@@ -52,6 +54,14 @@ public class TablesFragment extends Fragment {
                 }
             }
         });
+        adapter.setOnElementLongClickListener(new OnElementLongClick<Table>() {
+            @Override
+            public void longClickedOn(Table element, int position) {
+                if (longClickListener != null){
+                    longClickListener.longClickedOn(element, position);
+                }
+            }
+        });
     }
 
     public LinkedList<Table> getTables() {
@@ -61,8 +71,15 @@ public class TablesFragment extends Fragment {
     public OnElementClick<Table> getListener() {
         return listener;
     }
+    public OnElementLongClick<Table> getLongClickListener() {
+        return longClickListener;
+    }
 
     public void setListener(OnElementClick<Table> listener) {
         this.listener = listener;
+    }
+
+    public void setLongClickListener(OnElementLongClick<Table> longClickListener){
+        this.longClickListener = longClickListener;
     }
 }

@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="horizontal"
+              android:weightSum="1"
+              android:layout_marginTop="@dimen/row_top_margin"
+              android:layout_marginBottom="@dimen/row_bottom_margin"
               android:layout_width="match_parent"
               android:layout_height="@dimen/table_row_height">
-    <TextView
-        android:layout_width="match_parent"
+
+    <LinearLayout
+        android:layout_width="@dimen/zero_dim"
         android:layout_height="match_parent"
-        android:id="@+id/row_table_text"/>
+        android:layout_weight="0.2"
+        android:gravity="center">
+        <include layout="@layout/icon_centered"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="@dimen/zero_dim"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8"
+        android:orientation="vertical"
+        android:weightSum="1"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero_dim"
+            android:textSize="@dimen/big_text_size_dim"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:layout_weight="0.4"
+            android:id="@+id/row_table_name"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero_dim"
+            android:textSize="@dimen/mid_text_size_dim"
+            android:gravity="center_vertical"
+            android:layout_weight="0.3"
+            android:id="@+id/row_table_people"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero_dim"
+            android:textSize="@dimen/mid_text_size_dim"
+            android:gravity="center_vertical"
+            android:layout_weight="0.3"
+            android:id="@+id/row_table_state"/>
+    </LinearLayout>
 
 </LinearLayout>

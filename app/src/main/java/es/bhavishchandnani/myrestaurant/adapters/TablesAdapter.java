@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import es.bhavishchandnani.myrestaurant.R;
 import es.bhavishchandnani.myrestaurant.model.Table;
 import es.bhavishchandnani.myrestaurant.views.OnElementClick;
+import es.bhavishchandnani.myrestaurant.views.OnElementLongClick;
 import es.bhavishchandnani.myrestaurant.views.TableRowViewHolder;
 
 import static android.content.ContentValues.TAG;
@@ -23,6 +24,7 @@ public class TablesAdapter extends RecyclerView.Adapter<TableRowViewHolder>{
     private final LayoutInflater layoutInflater;
     private final LinkedList<Table> tableList;
     private OnElementClick<Table> listener;
+    private OnElementLongClick longClickListener;
 
     public TablesAdapter(Context context, LinkedList<Table> tables) {
         this.layoutInflater = LayoutInflater.from(context);
@@ -50,6 +52,18 @@ public class TablesAdapter extends RecyclerView.Adapter<TableRowViewHolder>{
                 }
             }
         });
+
+        row.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Log.d(TAG, "onLongClick: long clicked item "+ position);
+                if (longClickListener != null){
+                    longClickListener.longClickedOn(table, position);
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     @Override
@@ -60,4 +74,9 @@ public class TablesAdapter extends RecyclerView.Adapter<TableRowViewHolder>{
     public void setOnElementClickListener(@NonNull final OnElementClick listener){
         this.listener =  listener;
     }
+
+    public void setOnElementLongClickListener(@NonNull final OnElementLongClick listener){
+        this.longClickListener =  listener;
+    }
+
 }

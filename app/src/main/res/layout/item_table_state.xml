@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:layout_marginTop="@dimen/row_margin"
+              android:layout_marginBottom="@dimen/row_margin"
+              android:layout_width="@dimen/item_table_state_dim"
+              android:layout_height="@dimen/item_table_state_dim">
+    <include layout="@layout/icon_centered"/>
+
+    <TextView
+        android:id="@+id/item_table_state_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="@dimen/very_small_text_size_dim"
+        android:gravity="center"
+        tools:text="Table state"/>
+
+</LinearLayout>

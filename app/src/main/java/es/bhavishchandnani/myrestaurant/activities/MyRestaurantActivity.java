@@ -101,7 +101,7 @@ public class MyRestaurantActivity extends AppCompatActivity implements View.OnCl
         private List<Table> getExampleTableListModel() {
             List<Table> tablesList = new LinkedList<>();
             for (int i = 0; i < Constants.NUMBER_OF_TABLES; i++){
-                tablesList.add(new Table(i+1, 4, TableState.EMPTY, new LinkedList<Dish>()));
+                tablesList.add(new Table(i+1, 0, TableState.EMPTY, new LinkedList<Dish>()));
             }
             return tablesList;
         }

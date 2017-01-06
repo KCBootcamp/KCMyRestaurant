@@ -9,7 +9,8 @@ import java.util.List;
 public class TablesTests extends AndroidTestCase {
     public void testCreateDishesNoReturnsNull(){
         List<Table> data = getTables();
-        Tables sut = new Tables(data);
+        Tables.getInstance().setTables(data);
+        Tables sut = (Tables) Tables.getInstance().getTables();
         assertNotNull(sut);
         assertNotNull(sut.getCount());
         assertEquals(sut.getTables(), data);
@@ -26,7 +27,7 @@ public class TablesTests extends AndroidTestCase {
     }
 
     public Table getTable(int number){
-        Table table = new Table(number, 4, TableState.ORDERPENDING);
+        Table table = new Table(number, 4, TableState.ORDERPENDING,new LinkedList<Dish>());
         return table;
     }
 }

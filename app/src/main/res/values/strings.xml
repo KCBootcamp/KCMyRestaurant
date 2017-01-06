@@ -27,4 +27,12 @@
     <string name="drink">Bebida</string>
     <string name="detail_dish_type_header">"Tipo: "</string>
     <string name="detail_description_header">Descripción</string>
+    <string name="state_table_empty">Sin ocupar</string>
+    <string name="state_table_pending">Pendiente de coger el pedido</string>
+    <string name="state_table_taken">Pedido cogido</string>
+    <string name="state_table_served">Pedido servido</string>
+    <string name="state_table_paid">Pagado</string>
+    <string name="table_people_header">Nº de comensales: </string>
+    <string name="zero_number">0</string>
+    <string name="edit_table_parameters">Configura la mesa</string>
 </resources>
