@@ -36,4 +36,5 @@
     <dimen name="edittext_horizontal_padding">12dp</dimen>
     <dimen name="edittext_horizontal_margin">6dp</dimen>
     <dimen name="item_table_state_dim">65dp</dimen>
+    <dimen name="row_width">300dp</dimen>
 </resources>

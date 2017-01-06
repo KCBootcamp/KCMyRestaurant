@@ -41,5 +41,7 @@
     <string name="remove_dish_to_table_question">¿Quiere eliminar este plato al pedido de la mesa?</string>
     <string name="table_has_no_dishes">LA mesa seleccionada no tiene platos</string>
     <string name="total_price">"Precio total: "</string>
+    <string name="close_bill">Finalizar pedido</string>
+    <string name="close_bill_question">¿Quieres finalizar el pedido? (Cuenta pagada)</string>
 
 </resources>
