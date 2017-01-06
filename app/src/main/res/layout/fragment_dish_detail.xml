@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/detail_img"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                tools:src="@drawable/ic_allergen"
+                android:layout_weight="0.4"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.6">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:padding="@dimen/detail_elements_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/detail_elements_margin"
+                        android:layout_marginBottom="@dimen/detail_elements_margin"
+                        >
+
+                        <TextView
+                            android:id="@+id/detail_dish_type"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.7"
+                            android:gravity="center_vertical"
+                            tools:text="Dish Type example"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/very_big_text_size_dim"/>
+
+                        <TextView
+                            android:id="@+id/detail_dish_price"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:gravity="right|center_vertical"
+                            tools:text="Dish Price example"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/very_very_big_text_size_dim"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/detail_elements_margin"
+                        android:layout_marginBottom="@dimen/detail_elements_margin">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/very_big_text_size_dim"
+                            android:textStyle="bold"
+                            android:text="@string/detail_description_header"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/detail_description"
+                            android:textSize="@dimen/mid_text_size_dim"
+                            tools:text="Dish Description example"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/detail_elements_margin"
+                        android:layout_marginBottom="@dimen/detail_elements_margin">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/very_big_text_size_dim"
+                            android:textStyle="bold"
+                            android:text="@string/allergens"/>
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:id="@+id/detail_allergens_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/detail_elements_margin"
+                            android:layout_marginBottom="@dimen/detail_elements_margin">
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
