@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +15,7 @@ import es.bhavishchandnani.myrestaurant.R;
 import es.bhavishchandnani.myrestaurant.adapters.TablesAdapter;
 import es.bhavishchandnani.myrestaurant.model.Table;
 import es.bhavishchandnani.myrestaurant.model.Tables;
+import es.bhavishchandnani.myrestaurant.views.GridAutofitLayoutManager;
 import es.bhavishchandnani.myrestaurant.views.OnElementClick;
 import es.bhavishchandnani.myrestaurant.views.OnElementLongClick;
 
@@ -34,7 +34,7 @@ public class TablesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
         tablesRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        tablesRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        tablesRecyclerView.setLayoutManager(new GridAutofitLayoutManager(getActivity(), Math.round(getResources().getDimension(R.dimen.row_width))));
 
         FloatingActionButton addBtn = (FloatingActionButton) view.findViewById(R.id.add_button);
         addBtn.setVisibility(View.GONE);

@@ -1,10 +1,9 @@
 package es.bhavishchandnani.myrestaurant.utils;
 
-/**
- * Created by bhavishchandnani on 12/12/16.
- */
 
 public class Constants {
+    public static final String INTENT_KEY_TABLE_COMBINED = "INTENT_KEY_TABLE_COMBINED";
+    public static final String DISH_SELECTED = "DISH_SELECTED";
     public static String appName = "es.bhavishchandnani.myrestaurant";
     public static final String INTENT_KEY_DISH_POSITION = "INTENT_KEY_DISH_POSITION";
     public static final String INTENT_KEY_TABLE_POSITION = "INTENT_KEY_TABLE_POSITION";
