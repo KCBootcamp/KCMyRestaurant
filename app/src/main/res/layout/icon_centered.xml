@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="horizontal"
+              android:id="@+id/icon_centered"
+              android:layout_width="@dimen/squared_icon_dim"
+              android:layout_height="@dimen/squared_icon_dim">
+
+    <ImageView
+        android:id="@+id/icon_centered_icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/ic_allergen"/>
+
+</LinearLayout>

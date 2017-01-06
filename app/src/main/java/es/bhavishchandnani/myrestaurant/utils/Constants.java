@@ -5,7 +5,11 @@ package es.bhavishchandnani.myrestaurant.utils;
  */
 
 public class Constants {
-    // Messages (strings) only for development
+    public static final String INTENT_KEY_DISH_POSITION = "INTENT_KEY_DISH_POSITION";
+    public static final String INTENT_KEY_TABLE_POSITION = "INTENT_KEY_TABLE_POSITION";
+    public static final String DISH_ARGUMENT_KEY = "DISH_ARGUMENT_KEY";
+    public static final String INTENT_KEY_DISHES_IS_FROM_ORDER = "INTENT_KEY_DISHES_IS_FROM_ORDER";
+    public static final int NUMBER_OF_TABLES = 15;
     public static String appName = "es.bhavishchandnani.myrestaurant";
 
 
