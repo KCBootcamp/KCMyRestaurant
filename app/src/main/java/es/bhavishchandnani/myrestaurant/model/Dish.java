@@ -84,5 +84,6 @@ public class Dish implements Serializable {
     public void setType(DishType type) {
         this.type = type;
     }
+
 }
 

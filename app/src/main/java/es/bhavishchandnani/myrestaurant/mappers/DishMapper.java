@@ -11,6 +11,7 @@ import java.io.StringReader;
 import java.util.Currency;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 import es.bhavishchandnani.myrestaurant.communications.NetworkDishEntity;
 import es.bhavishchandnani.myrestaurant.communications.NetworkDishEntityList;
@@ -65,7 +66,7 @@ public class DishMapper {
            return DishType.valueOf(type);
         }catch (Exception e){
            System.out.println("ERROR PARSING DISHTYPE");
-           return null;
+           return DishType.DRINK;
         }
 
     }
@@ -88,7 +89,7 @@ public class DishMapper {
             return Currency.getInstance(currencyString);
         }catch (Exception e){
             System.out.println("ERROR PARSING CURRENCY");
-            return null;
+            return Currency.getInstance(Locale.FRANCE);
         }
 
     }
